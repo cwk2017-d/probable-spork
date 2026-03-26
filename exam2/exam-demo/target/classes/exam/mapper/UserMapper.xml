@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="exam.mapper.UserMapper">
+    <insert id="textadd">
+        insert into text(text,date,state)values (#{text},#{date},'未审批');
+    </insert>
+    <select id="selectpass" resultType="exam.pojo.pass">
+        select * from pass where id=#{id} and password=#{password};
+    </select>
+    <select id="selectAllText" resultType="exam.pojo.text">
+        select * from text;
+    </select>
+    <select id="selectPendingText" resultType="exam.pojo.text">
+        select * from text where state='未审批';
+    </select>
+    <update id="approveText">
+        update text set state=#{state} where id=#{id};
+    </update>
+    <select id="selectAllUsers" resultType="exam.pojo.pass">
+        select * from pass;
+    </select>
+    <insert id="addUser">
+        insert into pass(id,password,role,state)values (#{id},#{password},#{role},#{state});
+    </insert>
+    <update id="updateUser">
+        update pass set password=#{password}, role=#{role}, state=#{state} where id=#{id};
+    </update>
+    <delete id="deleteUser">
+        delete from pass where id=#{id};
+    </delete>
+</mapper>

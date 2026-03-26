@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录界面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f0fe; /* 淡蓝色背景 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background-color: white; /* 白色背景 */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            margin: 15px 0;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #007bff; /* 蓝色边框 */
+            border-radius: 4px;
+            box-sizing: border-box; /* 适应边框和内边距 */
+        }
+        input[type="submit"] {
+            background-color: #007bff; /* 蓝色按钮 */
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* 深蓝色悬停效果 */
+        }
+    </style>
+</head>
+<body>
+
+<form action="/exam-demo/login" method="post">
+    <h1>登录</h1>
+    <p>账户:<input type="text" name="id" id="id" required></p>
+    <p>密码:<input type="password" name="password" id="password" required></p>
+    <input type="submit" value="登录">
+</form>
+</body>
+</html>

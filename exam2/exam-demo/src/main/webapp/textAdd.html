@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>公文拟制</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5; /* 浅灰色背景 */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+            width: 80%; /* 调整 form 的宽度 */
+            max-width: 800px; /* 设置 form 的最大宽度 */
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #555;
+            width: 100%; /* 让 p 标签宽度与 form 一致 */
+            text-align: center; /* 居中对齐 */
+        }
+        textarea {
+            width: 100%; /* 占满整个容器宽度 */
+            height: 200px; /* 文本框高度 */
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            resize: vertical; /* 允许垂直调整大小 */
+        }
+        input[type="submit"] {
+            width: 100%; /* 占满整个容器宽度 */
+            height: 45px; /* 提交按钮高度 */
+            background-color: dodgerblue;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+<h1>公文拟制</h1>
+<form action="/exam-demo/textadd" method="post">
+    <p>创建新的公文:</p>
+    <textarea name="text" id="text" placeholder="请输入公文内容"></textarea>
+    <p>日期:<input type="date" id="date" name="date"></p>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
