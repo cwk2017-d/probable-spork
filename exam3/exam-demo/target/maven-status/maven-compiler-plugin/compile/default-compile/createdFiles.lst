@@ -1,0 +1,13 @@
+exam\web\ruku.class
+exam\mapper\UserMapper.class
+exam\web\materialdelete.class
+exam\web\warehousedelete.class
+exam\web\materialadd.class
+exam\web\login.class
+exam\pojo\taizhang.class
+exam\web\materialedit.class
+exam\web\warehouseedit.class
+exam\pojo\pass.class
+exam\pojo\material.class
+exam\pojo\warehouse.class
+exam\web\warehouseadd.class

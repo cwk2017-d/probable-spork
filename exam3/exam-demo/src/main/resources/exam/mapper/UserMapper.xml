@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="exam.mapper.UserMapper">
+    <insert id="warehouseadd">
+        insert into warehouse(id,name,guige,caizhi,gongyingshang,logo,wuzifenlei)
+        values (#{id},#{name},#{guige},#{caizhi},#{gongyingshang},#{logo},#{wuzifenlei});
+    </insert>
+    <insert id="materialadd">
+        insert into material(number,wuzifenlei,name,guige,caizhi)
+        values (#{number},#{wuzufenlei},#{name},#{guige},#{caizhi});
+    </insert>
+    <insert id="ruku">
+        insert into taizhang(id,caozuo,shuliang,jiliang,cunfang)
+        values (#{id},'入库',#{shuliang},#{jiliang},#{cunfang});
+    </insert>
+    <update id="warehouseedit">
+        update warehouse set name=#{name},guige=#{guige},caizhi=#{caizhi},gongyingshang=#{gongyingshang},logo=#{logo},wuzifenlei=#{wuzifenlei} where id=#{id};
+    </update>
+    <update id="materialedit">
+        update material set wuzifenlei=#{wuzufenlei},name=#{name},guige=#{guige},caizhi=#{caizhi}where number=#{number};
+    </update>
+    <delete id="warehousedelete">
+        delete from warehouse where id=#{id};
+    </delete>
+    <delete id="materialdelete">
+        delete from material where number=#{number};
+    </delete>
+
+    <select id="selectpass" resultType="exam.pojo.pass">
+        select * from pass where id=#{id} and password=#{password};
+    </select>
+    <select id="selectwarehouse" resultType="exam.pojo.warehouse">
+        select * from warehouse where id=#{id};
+    </select>
+    <select id="selectmaterial" resultType="exam.pojo.material">
+        select * from material where number=#{number} and wuzifenlei=#{wuzifenlei};
+    </select>
+    <select id="taizhangselect" resultType="exam.pojo.taizhang">
+        select * from taizhang where id=#{id};
+    </select>
+</mapper>
